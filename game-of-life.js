@@ -7,6 +7,11 @@ export default class GameOfLife extends Phaser.Scene {
     this.RECTANGLE_SIZE = 5;
     this.array2D = randomArray2D(this.ARRAY_SIZE);
   }
+  create () {
+    this.input.on('pointerdown', () => {
+      this.array2D = randomArray2D(this.ARRAY_SIZE);
+    });
+  }
   update() {
     console.log("FPS:", this.game.loop.actualFps);
     this.drawRectangle();
